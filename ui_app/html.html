@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UI App</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="u_username" placeholder="username" required />
+      <input type="password" id="u_password" placeholder="password" required />
+      <input type="submit" id="u_auth" value="Envoyer" />
+    </form>
+    <hr />
+    <b><span id="u_token"></span></b>
+    <hr />
+    <form>
+      <input type="number" id="u_value" required />
+      <label>to</label>
+      <select id="u_metric">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+      </select>
+      <input type="submit" id="u_convert" value="Conversion" />
+    </form>
+    <hr />
+    <b>Result:</b> <span id="u_result"></span>
+    <hr />
+    <button id="u_get_history">History</button>
+    <hr />
+    <b><span id="u_history_username"></span></b>
+    <pre id="u_history_data"></pre>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

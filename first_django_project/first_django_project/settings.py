@@ -26,7 +26,8 @@ SECRET_KEY = "f#%jy$(jqk26s$$-e+07mjb65)l5mtjn^hdcx4)pn_b^d85-dt"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     # third party library
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
     # our apps
     "first_django_app.apps.FirstDjangoAppConfig",
     "second_django_app.apps.SecondDjangoAppConfig",
@@ -62,6 +64,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # third party middleware
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "first_django_project.urls"
