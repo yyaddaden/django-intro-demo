@@ -1,0 +1,59 @@
+{% extends '../base.html' %} 
+
+{% block title %}Conversion{% endblock %} 
+
+{% block content %}
+<div class="jumbotron">
+  <h1>Page de conversion</h1>
+  <div class="lead">
+    <form method="POST" action="{% url 'second_result' %}">
+      {% csrf_token %}
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="celsius"
+              name="user_choice"
+              required
+            />
+            <label class="form-check-label">Celsius</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="fahrenheit"
+              name="user_choice"
+              required
+            />
+            <label class="form-check-label">Fahrenheit</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Entrer une valeur ..."
+            name="user_value"
+            step="0.01"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-success btn-block sm-3">
+            Convertir
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends '../base.html' %}
+
+{% block title %}Résultat{% endblock %} 
+
+{% block content %}
+<div class="jumbotron">
+  <h1>Page de résultat</h1>
+  <div class="lead">
+    En convertissant
+    <span class="badge badge-secondary">
+      {{ initial_value }} {% if initial_metric == "celsius" %} °C {% else %} °F
+      {% endif %}
+    </span>
+    , on obtient
+    <span class="badge badge-success">
+      {{ final_value }} {% if initial_metric == "celsius" %} °F {% else %} °C 
+      {% endif %}
+    </span>
+  </div>
+  <hr />
+  <a class="btn btn-primary" href="{% url 'second_converter' %}" role="button"
+    >Retour</a
+  >
+</div>
+{% endblock %}
